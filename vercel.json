@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "main.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/api/chat", "dest": "main.py" },
+    { "src": "/(.*)", "dest": "static/\\1" }
+  ]
+}
